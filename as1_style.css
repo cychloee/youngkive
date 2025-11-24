@@ -1,0 +1,295 @@
+/* 
+CSS focuses on clean structure (flex/grid) and consistent typography. 
+Colors: navy (used in logo) as highlight (deep water), text (#221e17), 
+and light cream background (#fffaf4) for readability and soft contrast are used. 
+Fonts: serif are used for classic feeling, supporting its identity.
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; /* 좌우 스크롤 방지 */
+  background-color: #fffcf8;
+  color: #221e17;
+  animation: fadeIn 0.5s ease-in; /* 페이드인 애니메이션 */
+
+}
+
+/* 페이드인 애니메이션 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+ /* font settings */
+ :root * {
+  font-family: 'Merriweather', 'Noto Serif KR', serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+ @supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
+
+/* header */
+header {
+  position: flex;
+  top: 0;
+  width: 390px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 28px;
+  background-color: none;
+  box-sizing: border-box;
+}
+
+/* logo */
+#m-logo img {
+display: block;
+}
+
+/* navigation */
+#m-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px; 
+  text-align: right;
+}
+#m-nav ul li a {
+  display: block;
+  text-decoration: none; /* to remove underline */
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 1;
+  color: #263442;
+}
+#m-nav ul li a.active {
+  text-decoration: none; /* to remove underline */
+  font-weight: 800; /* to make it bolder */
+} 
+
+/* Main content */
+#main-content {
+  width: 100%;
+  max-width: 390px;
+  height: auto;
+  margin-top: 0px; /* 헤더 박스랑 같은 값 */
+  margin-bottom: 30px; /* 푸터 박스랑 같은 값*/
+  padding: 28px 28px;
+  background-color: none;  
+  box-sizing: border-box;
+  overflow: auto; /* to scroll up/down */
+}
+
+/* footer */
+#m-footer, #m-footer a {
+  color: #263442;
+}
+#m-footer {
+    width: 390px;
+    margin-top: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 5px;
+    line-height: 2px;
+}
+
+/* index page */
+.index-container {
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  height: 622px;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 28px;
+  box-sizing: border-box;
+}
+
+.index-container h1,
+.index-container .p2 {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.logo-img {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.lock-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: rotate(14deg);
+}
+
+/* layout */
+.work-layout {
+  display: flex;
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* layout left */
+.work-left {
+  width: 212px;
+  margin-right: 4px;
+  box-sizing: border-box;
+}
+
+/* img all */
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 한 줄에 하나 */
+  gap: 6px; /* 이미지 사이 간격 */
+}
+.img-grid img {
+  width: 100%;
+  aspect-ratio: 3 / 4; /* 3:4 비율 유지 */
+  object-fit: cover;
+  display: block;
+}
+.img-post, .img-post-landscape {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 한 줄에 하나 */
+  gap: 6px; /* 이미지 사이 간격 */
+}
+
+/* img post */
+.img-post img {
+  width: 100%;
+  aspect-ratio: 3 / 4; /* 3:4 비율 유지 */
+  object-fit: cover;
+  display: block;
+}
+.img-post-landscape img {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* 3:4 비율 유지 */
+  object-fit: cover;
+  display: block;
+}
+
+/* layout right */
+.work-right {
+  display: flex;
+  flex-direction: column; /* 소개랑 가로 정렬 X */
+  justify-content: flex-start; /* 위쪽에 붙게 */
+  align-items: flex-end; /* 내부 요소 오른쪽으로 */
+  margin: 0;
+  padding-left: 42px;
+  width: 174px;
+  box-sizing: border-box;
+}
+
+/* work nav */
+#work-nav {
+  width: 100%;
+  text-align: right;
+}
+#work-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; 
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+#work-nav ul li a {
+  display: block;
+  text-decoration: none;
+  font-size: 8px;
+  font-weight: 500; 
+  line-height: 1;
+  color: #263442;
+}
+#work-nav ul li a.active {
+  text-decoration: none;
+  font-weight: 800; /* to make it bolder than 'bold' */
+} 
+
+
+/* work description */
+.work-description {
+  margin-top: 24px;
+  font-size: 6px;
+  color:#221e17;
+  line-height: 12px;
+  text-align: right;
+  width: 100%;
+  display: block;
+}
+
+
+/* other text settings */
+#main-content h1 {
+  font-size: 16px;
+  color: #221e17;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.intro-info {
+  box-sizing: border-box;
+  margin-bottom: 32px;
+}
+
+.p1 {
+  font-size: 8px;
+  color: #221e17;
+  margin: 6px 0;
+  margin-bottom: 8px;
+}
+
+.p2 {
+  font-size: 10px;
+  color: #221e17;
+  line-height: 8px;
+}
+.p2 a {
+  text-decoration: none;
+  font-size: 10px;
+  color: #221e17;
+  pointer-events: auto;
+}
+
+.backbt {
+  text-decoration: none;
+  font-size: 8px;
+  color: #221e17;
+  font-weight: 800;
+  text-align: right;
+  display: block;
+}
+
+.work-right h2 {
+  font-size: 14px;
+  color: #221e17;
+  margin-bottom: 20px;
+  font-weight: 800;
+  text-align: right;
+}
+
+.p22 {
+  font-size: 9px;
+  color: #221e17;
+  line-height: 8px;
+  font-weight: 500;
+  text-align: right;
+}
